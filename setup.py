@@ -2,6 +2,11 @@ from distutils.core import setup, Extension
 from Cython.Build import cythonize
 
 
+DESCRIPTION = """\
+Cython math provides fused-type wrappers for C99 math.h and complex.h
+functions.
+"""
+
 ext_modules = [
     Extension("cython_math.cython_math",
               ["cython_math/cython_math.pyx"]),
@@ -10,5 +15,11 @@ ext_modules = [
 ]
 
 setup(
-    ext_modules = cythonize(ext_modules)
+    name="Cython Math",
+    description=DESCRIPTION,
+    author="Josh Wilson",
+    ext_modules=cythonize(ext_modules),
+    packages=["cython_math"],
+    package_data={"cython_math": ["__init__.pxd",
+                                  "cython_math.pxd"]}
 )
