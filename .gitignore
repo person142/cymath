@@ -1,0 +1,12 @@
+# Backup files
+**/*~
+
+# Build products
+build/*
+**/*.c
+**/*.so
+
+# Compiled Python files
+**/_pycache/*
+**/*.pyc
+.cache/*
