@@ -8,8 +8,8 @@ functions.
 """
 
 ext_modules = [
-    Extension("cython_math.cython_math",
-              ["cython_math/cython_math.pyx"]),
+    Extension("cython_math.libm",
+              ["cython_math/libm.pyx"]),
 ]
 
 setup(

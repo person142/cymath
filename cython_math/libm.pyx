@@ -1,4 +1,4 @@
-include "cython_math.pxi"
+include "libm.pxi"
 
 
 cdef extern from "complex.h" nogil:

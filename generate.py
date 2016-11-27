@@ -41,32 +41,32 @@ class Test{CAPFUNC}(unittest.TestCase):
     def test_float(self):
         cdef float x = {REAL_POINT}
         cdef float res = {REAL_RESULT}
-        self.assertTrue(allclose(cython_math.{FUNC}(x), res))
+        self.assertTrue(allclose(libm.{FUNC}(x), res))
 
     def test_double(self):
         cdef double x = {REAL_POINT}
         cdef double res = {REAL_RESULT}
-        self.assertTrue(allclose(cython_math.{FUNC}(x), res))
+        self.assertTrue(allclose(libm.{FUNC}(x), res))
 
     def test_long_double(self):
         cdef long double x = {REAL_POINT}
         cdef long double res = {REAL_RESULT}
-        self.assertTrue(allclose(cython_math.{FUNC}(x), res))
+        self.assertTrue(allclose(libm.{FUNC}(x), res))
 
     def test_float_complex(self):
         cdef float complex x = {COMPLEX_POINT}
         cdef float complex res = {COMPLEX_RESULT}
-        self.assertTrue(allclose(cython_math.{FUNC}(x), res))
+        self.assertTrue(allclose(libm.{FUNC}(x), res))
 
     def test_double_complex(self):
         cdef double complex x = {COMPLEX_POINT}
         cdef double complex res = {COMPLEX_RESULT}
-        self.assertTrue(allclose(cython_math.{FUNC}(x), res))
+        self.assertTrue(allclose(libm.{FUNC}(x), res))
 
     def test_long_double_complex(self):
         cdef long double complex x = {COMPLEX_POINT}
         cdef long double complex res = {COMPLEX_RESULT}
-        self.assertTrue(allclose(cython_math.{FUNC}(x), res))
+        self.assertTrue(allclose(libm.{FUNC}(x), res))
 """
 
 # Format is (FUNC, REAL_POINT, COMPLEX_POINT)
@@ -110,7 +110,7 @@ def main():
         COMPLEX_DECLARATIONS.append(COMPLEX_DECLARATION.format(FUNC=f))
         REAL_COMPLEX_FUNC_BODIES.append(REAL_COMPLEX_FUNC_BODY.format(FUNC=f))
         REAL_COMPLEX_TEST_BODIES.append(make_test(f, real_p, complex_p))
-    with open('cython_math/cython_math.pxi', 'w') as f:
+    with open('cython_math/libm.pxi', 'w') as f:
         f.write('cdef extern from "math.h" nogil:\n')
         f.write(''.join(REAL_DECLARATIONS))
         f.write('\n')
