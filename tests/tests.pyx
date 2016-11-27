@@ -35,5 +35,23 @@ def allclose(real_complex_t res, real_complex_t std):
         return cabsl(res - std) < 1e-3*cabsl(std)
 
 
+class TestAbs(unittest.TestCase):
+
+    def test_double(self):
+        cdef double x = -1.0
+        self.assertTrue(allclose(libm.abs(-1.0), 1.0))
+
+    def test_double_complex(self):
+        cdef double complex x = 1.0 + 1.0j
+        self.assertTrue(allclose(libm.abs(1.0 + 1.0j), 1.4142135623730951))
+
+
+class TestArg(unittest.TestCase):
+
+    def test_double_complex(self):
+        cdef double complex x = 1.0j
+        self.assertTrue(allclose(libm.arg(x), 1.5707963267948966))
+
+
 def run():
     unittest.main(module='tests')

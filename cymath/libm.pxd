@@ -14,6 +14,10 @@ ctypedef fused complex_t:
     double complex
     long double complex
 
+ctypedef fused double_double_complex_t:
+    double
+    double complex
+
 ctypedef fused real_complex_t:
     float
     double
@@ -23,10 +27,10 @@ ctypedef fused real_complex_t:
     long double complex
 
 
-# abs
+cdef double abs(double_double_complex_t) nogil
 cdef real_complex_t acos(real_complex_t) nogil
 cdef real_complex_t acosh(real_complex_t) nogil
-# arg
+cdef double arg(double complex) nogil
 cdef real_complex_t asin(real_complex_t) nogil
 cdef real_complex_t asinh(real_complex_t) nogil
 cdef real_complex_t atan(real_complex_t) nogil
