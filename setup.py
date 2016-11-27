@@ -19,5 +19,5 @@ setup(
     ext_modules=cythonize(ext_modules),
     packages=["cython_math"],
     package_data={"cython_math": ["__init__.pxd",
-                                  "cython_math.pxd"]}
+                                  "libm.pxd"]}
 )
