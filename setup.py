@@ -8,16 +8,16 @@ functions.
 """
 
 ext_modules = [
-    Extension("cython_math.libm",
-              ["cython_math/libm.pyx"]),
+    Extension("cymath.libm",
+              ["cymath/libm.pyx"]),
 ]
 
 setup(
-    name="Cython Math",
+    name="cymath",
     description=DESCRIPTION,
     author="Josh Wilson",
     ext_modules=cythonize(ext_modules),
-    packages=["cython_math"],
-    package_data={"cython_math": ["__init__.pxd",
-                                  "libm.pxd"]}
+    packages=["cymath"],
+    package_data={"cymath": ["__init__.pxd",
+                             "libm.pxd"]}
 )

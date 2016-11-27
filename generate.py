@@ -110,7 +110,7 @@ def main():
         COMPLEX_DECLARATIONS.append(COMPLEX_DECLARATION.format(FUNC=f))
         REAL_COMPLEX_FUNC_BODIES.append(REAL_COMPLEX_FUNC_BODY.format(FUNC=f))
         REAL_COMPLEX_TEST_BODIES.append(make_test(f, real_p, complex_p))
-    with open('cython_math/libm.pxi', 'w') as f:
+    with open('cymath/libm.pxi', 'w') as f:
         f.write('cdef extern from "math.h" nogil:\n')
         f.write(''.join(REAL_DECLARATIONS))
         f.write('\n')

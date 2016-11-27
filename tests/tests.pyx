@@ -1,7 +1,7 @@
 import unittest
 
-from cython_math cimport libm
-from cython_math.libm cimport (
+from cymath cimport libm
+from cymath.libm cimport (
     long_double,
     float_complex, double_complex, long_double_complex,
     real_complex_t
