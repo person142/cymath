@@ -7,7 +7,7 @@ cdef extern from "complex.h" nogil:
     long double complex complex_cprojl "cprojl"(long double complex)
 
 
-cpdef complex_t proj(complex_t x) nogil:
+cdef complex_t proj(complex_t x) nogil:
     if complex_t is float_complex:
         return complex_cprojf(x)
     elif complex_t is double_complex:

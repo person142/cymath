@@ -93,7 +93,7 @@ cdef extern from "complex.h" nogil:
     long double complex complex_ctanhl "ctanhl"(long double complex)
 
 
-cpdef real_complex_t acos(real_complex_t x) nogil:
+cdef real_complex_t acos(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_acosf(x)
     elif real_complex_t is double:
@@ -108,7 +108,7 @@ cpdef real_complex_t acos(real_complex_t x) nogil:
         return complex_cacosl(x)
 
 
-cpdef real_complex_t acosh(real_complex_t x) nogil:
+cdef real_complex_t acosh(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_acoshf(x)
     elif real_complex_t is double:
@@ -123,7 +123,7 @@ cpdef real_complex_t acosh(real_complex_t x) nogil:
         return complex_cacoshl(x)
 
 
-cpdef real_complex_t asin(real_complex_t x) nogil:
+cdef real_complex_t asin(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_asinf(x)
     elif real_complex_t is double:
@@ -138,7 +138,7 @@ cpdef real_complex_t asin(real_complex_t x) nogil:
         return complex_casinl(x)
 
 
-cpdef real_complex_t asinh(real_complex_t x) nogil:
+cdef real_complex_t asinh(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_asinhf(x)
     elif real_complex_t is double:
@@ -153,7 +153,7 @@ cpdef real_complex_t asinh(real_complex_t x) nogil:
         return complex_casinhl(x)
 
 
-cpdef real_complex_t atan(real_complex_t x) nogil:
+cdef real_complex_t atan(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_atanf(x)
     elif real_complex_t is double:
@@ -168,7 +168,7 @@ cpdef real_complex_t atan(real_complex_t x) nogil:
         return complex_catanl(x)
 
 
-cpdef real_complex_t atanh(real_complex_t x) nogil:
+cdef real_complex_t atanh(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_atanhf(x)
     elif real_complex_t is double:
@@ -183,7 +183,7 @@ cpdef real_complex_t atanh(real_complex_t x) nogil:
         return complex_catanhl(x)
 
 
-cpdef real_complex_t cos(real_complex_t x) nogil:
+cdef real_complex_t cos(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_cosf(x)
     elif real_complex_t is double:
@@ -198,7 +198,7 @@ cpdef real_complex_t cos(real_complex_t x) nogil:
         return complex_ccosl(x)
 
 
-cpdef real_complex_t cosh(real_complex_t x) nogil:
+cdef real_complex_t cosh(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_coshf(x)
     elif real_complex_t is double:
@@ -213,7 +213,7 @@ cpdef real_complex_t cosh(real_complex_t x) nogil:
         return complex_ccoshl(x)
 
 
-cpdef real_complex_t exp(real_complex_t x) nogil:
+cdef real_complex_t exp(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_expf(x)
     elif real_complex_t is double:
@@ -228,7 +228,7 @@ cpdef real_complex_t exp(real_complex_t x) nogil:
         return complex_cexpl(x)
 
 
-cpdef real_complex_t log(real_complex_t x) nogil:
+cdef real_complex_t log(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_logf(x)
     elif real_complex_t is double:
@@ -243,7 +243,7 @@ cpdef real_complex_t log(real_complex_t x) nogil:
         return complex_clogl(x)
 
 
-cpdef real_complex_t sin(real_complex_t x) nogil:
+cdef real_complex_t sin(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_sinf(x)
     elif real_complex_t is double:
@@ -258,7 +258,7 @@ cpdef real_complex_t sin(real_complex_t x) nogil:
         return complex_csinl(x)
 
 
-cpdef real_complex_t sinh(real_complex_t x) nogil:
+cdef real_complex_t sinh(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_sinhf(x)
     elif real_complex_t is double:
@@ -273,7 +273,7 @@ cpdef real_complex_t sinh(real_complex_t x) nogil:
         return complex_csinhl(x)
 
 
-cpdef real_complex_t sqrt(real_complex_t x) nogil:
+cdef real_complex_t sqrt(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_sqrtf(x)
     elif real_complex_t is double:
@@ -288,7 +288,7 @@ cpdef real_complex_t sqrt(real_complex_t x) nogil:
         return complex_csqrtl(x)
 
 
-cpdef real_complex_t tan(real_complex_t x) nogil:
+cdef real_complex_t tan(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_tanf(x)
     elif real_complex_t is double:
@@ -303,7 +303,7 @@ cpdef real_complex_t tan(real_complex_t x) nogil:
         return complex_ctanl(x)
 
 
-cpdef real_complex_t tanh(real_complex_t x) nogil:
+cdef real_complex_t tanh(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_tanhf(x)
     elif real_complex_t is double:

@@ -17,7 +17,7 @@ cdef extern from "complex.h" nogil:
     double cabs(double complex)
     long double cabsl(long double complex)
 
-include "_utilities.pxi"
+include "tests.pxi"
 
 
 def allclose(real_complex_t res, real_complex_t std):
@@ -35,5 +35,5 @@ def allclose(real_complex_t res, real_complex_t std):
         return cabsl(res - std) < 1e-3*cabsl(std)
 
 
-def runtests():
-    unittest.main(module='cython_math._utilities')
+if __name__ == "__main__":
+    unitest.main()

@@ -20,7 +20,7 @@ COMPLEX_DECLARATION = """\
 """
 
 REAL_COMPLEX_FUNC_BODY = """\
-cpdef real_complex_t {FUNC}(real_complex_t x) nogil:
+cdef real_complex_t {FUNC}(real_complex_t x) nogil:
     if real_complex_t is float:
         return math_{FUNC}f(x)
     elif real_complex_t is double:
@@ -110,7 +110,7 @@ def main():
         COMPLEX_DECLARATIONS.append(COMPLEX_DECLARATION.format(FUNC=f))
         REAL_COMPLEX_FUNC_BODIES.append(REAL_COMPLEX_FUNC_BODY.format(FUNC=f))
         REAL_COMPLEX_TEST_BODIES.append(make_test(f, real_p, complex_p))
-    with open('cython_math.pxi', 'w') as f:
+    with open('cython_math/cython_math.pxi', 'w') as f:
         f.write('cdef extern from "math.h" nogil:\n')
         f.write(''.join(REAL_DECLARATIONS))
         f.write('\n')
@@ -118,7 +118,7 @@ def main():
         f.write(''.join(COMPLEX_DECLARATIONS))
         f.write('\n\n')
         f.write('\n\n'.join(REAL_COMPLEX_FUNC_BODIES))
-    with open('_utilities.pxi', 'w') as f:
+    with open('tests/tests.pxi', 'w') as f:
         f.write('\n\n'.join(REAL_COMPLEX_TEST_BODIES))
 
 
