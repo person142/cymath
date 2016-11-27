@@ -37,4 +37,4 @@ To install CyMath:
 To run the tests after installing:
 
 - run `setup.py build_ext -i` in `cymath/tests`
-- run `python -c "import tests; tests.run()`.
+- run `python -c "import tests; tests.run()"`.
