@@ -1,7 +1,7 @@
 import unittest
 
-cimport cython_math
-from cython_math cimport (
+from cython_math cimport libm
+from cython_math.libm cimport (
     long_double,
     float_complex, double_complex, long_double_complex,
     real_complex_t
@@ -35,5 +35,5 @@ def allclose(real_complex_t res, real_complex_t std):
         return cabsl(res - std) < 1e-3*cabsl(std)
 
 
-if __name__ == "__main__":
-    unitest.main()
+def run():
+    unittest.main(module='tests')
