@@ -1,4 +1,4 @@
-include "libm.pxi"
+include "cymath.pxi"
 
 cdef extern from "math.h" nogil:
     double math_fabs "fabs"(double)
