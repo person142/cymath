@@ -9,8 +9,9 @@ ext_modules = [
 
 setup(
     name='CyMath',
-    description='Math utilities for Cython',
+    version='0.0',
+    description='Wrappers to `libm` for Cython',
     author='Josh Wilson',
     ext_modules=cythonize(ext_modules),
-    data_files=[(get_python_lib(), ['cymath/cymath.pxd'])]
+    data_files=[(get_python_lib(), ['cymath/cymath.pxd'])],
 )
