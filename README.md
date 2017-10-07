@@ -1,30 +1,18 @@
 About
 =====
 
-CyMath aims to provide basic math routines in Cython. These routines
-should be:
+CyMath provides wrappers to `libm` to be used from Cython. The
+wrappers are:
 
 - cdef functions to avoid Python overhead
 - made generic by using fused types
 - GIL-free to allow for easy parallelization.
 
-All modules are extension modules and the functions in them must be
-cimported.
-
-
-Modules
-=======
-
-CyMath contains the following modules:
-
-- libm: fused type wrappers for functions in `math.h` and `complex.h`.
-
-
 Requirements
 ============
 
-CyMath requires that Cython is installed and that you have C99.
-
+CyMath requires that Cython is installed and that the C compiler being
+used supports C99.
 
 Installation
 ============
@@ -38,3 +26,23 @@ To run the tests after installing:
 
 - run `setup.py build_ext -i` in `cymath/tests`
 - run `python -c "import tests; tests.run()"`.
+
+Use
+===
+
+A basic example of use is:
+
+```
+cimport cymath
+
+cdef double x = 1.0
+cdef double y
+cdef double complex z = 1.0 + 1.0j
+cdef double complex w
+
+with nogil:
+    y = cymath.sin(x)
+    w = cymath.sin(z)
+
+print("y, w = {}, {}".format(y, w))
+```
