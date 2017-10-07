@@ -1,8 +1,7 @@
 About
 =====
 
-CyMath provides wrappers to `libm` to be used from Cython. The
-wrappers are:
+CyMath provides Cython wrappers for `libm`. The wrappers are:
 
 - cdef functions to avoid Python overhead
 - made generic by using fused types
