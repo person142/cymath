@@ -1,0 +1,11 @@
+language: python
+python:
+  - 2.7
+  - 3.6
+install:
+  - pip install cython
+script:
+  - pip install .
+  - cd tests
+  - python setup.py build_ext -i
+  - python -c "import tests; tests.run()"
